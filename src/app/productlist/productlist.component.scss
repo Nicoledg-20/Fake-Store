@@ -1,0 +1,188 @@
+body {
+  background-color: rgb(255, 247, 248); /* Light grey background for the entire page */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+
+.controls {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; /* Adjust space between buttons */
+  margin: 20px 0; /* Add some space above and below the button container */
+}
+
+.control-button {
+  display: flex;
+  align-items: center; /* Align icons and text vertically */
+  background-color: rgb(212, 71, 95);
+  color: white;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size if needed */
+  border: 2px solid #bb2577;
+  
+}
+
+.control-button i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.control-button:hover {
+  background-color: rgb(116, 0, 19);
+}
+
+.toggle-form-button {
+  display: flex;
+  background-color: rgb(255, 104, 129);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size if needed */
+  max-width: 300px; /* Adjust max-width as needed */
+}
+
+.toggle-form-button i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 16px; /* Adjust icon size if needed */
+}
+
+.toggle-form-button:hover {
+  background-color: #06192c;
+}
+
+/* Existing CSS for form and other components remains unchanged */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.logo-container {
+    text-align: center; // Center the logo
+    margin-bottom: 20px; // Add some space below the logo
+  }
+  
+  .logo-image {
+    max-width: 150px; // Adjust size as needed
+    height: auto; // Maintain aspect ratio
+  }
+
+
+  
+  .product-form {
+    margin: 20px auto; /* Center the form horizontally */
+    max-width: 450px; /* Set a max-width for the form */
+    padding: 10px; /* Add some padding inside the form */
+    border: 1px solid #ffabab; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: #ffcaca; /* Optional: Add a background color */
+    
+  }
+  
+  .product-form label {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px; /* Reduce font size */
+  }
+  
+  .product-form input {
+    display: block;
+    margin: 0 auto 10px; /* Center input fields and add space below */
+    width: 90%; /* Adjust width as needed */
+    padding: 10px; /* Reduce padding inside input fields */
+    font-size: 14px; /* Reduce font size */
+    border: 1px solid #ddd; /* Optional: Add a border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+  }
+  
+  .product-form button {
+    display: block;
+    width: 100%;
+    padding: 10px; /* Reduce padding for the button */
+    font-size: 14px; /* Adjust font size */
+    background-color: rgb(241, 79, 106);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* Add margin above the button */
+  }
+  
+  .product-form button:hover {
+    background-color: #b3002d;
+  }
+  
+  
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; // Adjust gap between cards as needed
+  }
+  
+  .product-card {
+    background: #fccece;
+    border: 2px solid #8a4444;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 380px; // Adjust width if needed
+    max-height: 500px; // Adjust height if needed
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .product-card img {
+    max-width: 40%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .product-card h2 {
+    font-size: 16px;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+  
+  .product-card p {
+    font-size: 12px;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+  
+  .product-card button {
+  
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 5px; // Adjust margin if needed
+  }
+  
+  .product-card button:hover {
+    background-color: #b3002d;
+  }
+  
+  /* Style the button container to display buttons side by side */
+  .button-container {
+    display: flex;
+    gap: 10px; // Adjust gap between buttons as needed
+  }
+  

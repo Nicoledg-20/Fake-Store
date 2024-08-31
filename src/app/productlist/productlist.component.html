@@ -1,0 +1,72 @@
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Show/Hide Form Button -->
+<button class="toggle-form-button" (click)="toggleForm()">
+  <i class="fas" [ngClass]="{'fa-eye': !isFormVisible, 'fa-eye-slash': isFormVisible}"></i>
+  {{ isFormVisible ? 'Hide Form' : 'Show Form' }}
+</button>
+
+<!-- Form for adding and updating products -->
+<div *ngIf="isFormVisible" class="product-form">
+  <form [formGroup]="productForm" (ngSubmit)="currentProduct ? updateProduct() : addProduct()">
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" />
+
+    <label for="price">Price</label>
+    <input id="price" formControlName="price" />
+
+    <label for="description">Description</label>
+    <input id="description" formControlName="description" />
+
+    <label for="category">Category</label>
+    <input id="category" formControlName="category" />
+
+    <label for="image">Image URL</label>
+    <input id="image" formControlName="image" />
+
+    <button type="submit">{{ currentProduct ? 'Update Product' : 'Add Product' }}</button>
+  </form>
+</div>
+
+<!-- Control Buttons -->
+<div class="controls">
+  <button class="control-button" (click)="loadLimitedProducts(5)">
+    <i class="fas fa-th-large"></i> Load Top 5 Products
+  </button>
+  <button class="control-button" (click)="loadSortedProducts('price', 'asc')">
+    <i class="fas fa-sort-amount-up-alt"></i> Sort by Price (Asc)
+  </button>
+  <button class="control-button" (click)="loadSortedProducts('price', 'desc')">
+    <i class="fas fa-sort-amount-down-alt"></i> Sort by Price (Desc)
+  </button>
+  <button class="control-button" (click)="loadProductsByCategory('electronics')">
+    <i class="fas fa-tv"></i> Filter by Electronics
+  </button>
+</div>
+
+
+
+<div class="product-list">
+  <div *ngFor="let product of products" class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>Price: ${{ product.price }}</p>
+    <p>{{ product.description }}</p>
+    <img [src]="product.image" alt="{{ product.title }}" />
+    <div class="button-container">
+      <button style="background-color: #36c457; color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer; font-size: 12px; margin: 5px;" 
+              onmouseover="this.style.backgroundColor='#218838';" 
+              onmouseout="this.style.backgroundColor='#6bdb86';" 
+              (click)="editProduct(product)">
+        <i class="fas fa-edit"></i> Edit
+      </button>
+      <button style="background-color: #e63737; color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer; font-size: 12px; margin: 5px;" 
+              onmouseover="this.style.backgroundColor='#c91d1d';" 
+              onmouseout="this.style.backgroundColor='#e63737';" 
+              (click)="deleteProduct(product.id)">
+        <i class="fas fa-trash"></i> Delete
+      </button>
+    </div>
+  </div>
+</div>
+</body>
